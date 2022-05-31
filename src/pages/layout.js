@@ -3,26 +3,18 @@ import { Link } from "gatsby";
 
 function Layout({ PageTitle, Children }) {
   return (
-    <div>
-      <main>
-        <h1>{PageTitle}</h1>
-        {Children}
-      </main>
+    <main>
+      <div style={{ display: "flex", gap: "10px" }}>
+        <Link to="/">홈</Link>
+        <Link to="/about">어바웃</Link>
 
-      <nav>
-        <ul>
-          <li>
-            <Link to="/about">About Page</Link>
-          </li>
-          <li>
-            <Link to="/test">Test Page</Link>
-          </li>
-          <li>
-            <Link to="/test-space">Test-Space Page</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        <Link to="/test">테스트</Link>
+
+        <Link to="/test-space">테스트 스페이스</Link>
+      </div>
+      <div>빈칸</div>
+      <div>CopyRight</div>
+    </main>
   );
 }
 
