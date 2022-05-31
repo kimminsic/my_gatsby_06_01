@@ -9,4 +9,4 @@ function testSpace() {
   );
 }
 
-export default testSapce;
+export default testSpace;
