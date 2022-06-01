@@ -23,6 +23,7 @@ function Layout({ pageTitle, children }) {
       <title>
         {pageTitle} | {data.site.siteMetadata.title}
       </title>
+      <header>{data.site.siteMetadata.title}</header>
 
       <nav>
         <ul className={navLinks}>
@@ -36,11 +37,17 @@ function Layout({ pageTitle, children }) {
               About
             </Link>
           </li>
+
+          <li className={navLinkItem}>
+            <Link className={navLinkText} to="/blog">
+              blog
+            </Link>
+          </li>
         </ul>
       </nav>
 
       <main>
-        <h1>{pageTitle}</h1>
+        <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
 

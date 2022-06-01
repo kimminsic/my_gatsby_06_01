@@ -7,7 +7,9 @@ const IndexPage = () => {
   return (
     <Layout pageTitle="Home Page">
       <p>Gatsby Tutorial</p>
-      <StaticImage alt="" src="../images/tiger.png"></StaticImage>
+
+      <br />
+      <StaticImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaO40gjNWRtv3SyGWUGkcM-GPk92KQCLlY2A&usqp=CAU"></StaticImage>
     </Layout>
   );
 };
