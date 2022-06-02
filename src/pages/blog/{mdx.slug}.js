@@ -1,9 +1,17 @@
 import React from "react";
-import Layout from "../../components/Layout";
+import Layout from "../../components/layout";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+import CodeBlock from "../../components/CodeBlock";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+const components = {
+  //코드 스타일링
+  code: CodeBlock,
+};
+
 const BlogPost = ({ data }) => {
   const image =
     data.mdx.frontmatter.hero_image &&
@@ -28,7 +36,10 @@ const BlogPost = ({ data }) => {
           </p>
         </>
       )}
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <hr />
+      <MDXProvider components={components}>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </MDXProvider>
       <div style={{ textAlign: "right" }}>
         <Link to="/blog">back</Link>
       </div>
