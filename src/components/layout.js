@@ -7,6 +7,7 @@ import {
   navLinkItem,
   navLinkText,
 } from "./layout.module.css";
+import reactDom from "react-dom";
 
 function Layout({ pageTitle, children }) {
   const data = useStaticQuery(graphql`
@@ -23,6 +24,7 @@ function Layout({ pageTitle, children }) {
       <title>
         {pageTitle} | {data.site.siteMetadata.title}
       </title>
+
       <header
         style={{
           fontSize: "3rem",

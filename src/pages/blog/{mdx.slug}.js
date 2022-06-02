@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Link } from "gatsby";
@@ -11,16 +11,27 @@ const BlogPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
-      <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
-      <p>
-        Photo Credit:{" "}
-        <a target="_blank" href={data.mdx.frontmatter.hero_image_credit_link}>
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
+      {image && (
+        <>
+          <GatsbyImage
+            image={image}
+            alt={data.mdx.frontmatter.hero_image_alt}
+          />
+          <p>
+            Photo Credit:{" "}
+            <a
+              target="_blank"
+              href={data.mdx.frontmatter.hero_image_credit_link}
+            >
+              {data.mdx.frontmatter.hero_image_credit_text}
+            </a>
+          </p>
+        </>
+      )}
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
-
-      <Link to="/blog">back</Link>
+      <div style={{ textAlign: "right" }}>
+        <Link to="/blog">back</Link>
+      </div>
     </Layout>
   );
 };
