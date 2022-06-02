@@ -5,14 +5,16 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const BlogPost = ({ data }) => {
-  const image = getImage(data.mdx.frontmatter.hero_image);
+  const image =
+    data.mdx.frontmatter.hero_image &&
+    getImage(data.mdx.frontmatter.hero_image);
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
       <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
       <p>
         Photo Credit:{" "}
-        <a href={data.mdx.frontmatter.hero_image_credit_link}>
+        <a target="_blank" href={data.mdx.frontmatter.hero_image_credit_link}>
           {data.mdx.frontmatter.hero_image_credit_text}
         </a>
       </p>

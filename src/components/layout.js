@@ -19,14 +19,23 @@ function Layout({ pageTitle, children }) {
     }
   `);
   return (
-    <div className={container}>
+    <div className={container} style={{ border: "2px solid gray" }}>
       <title>
         {pageTitle} | {data.site.siteMetadata.title}
       </title>
-      <header>{data.site.siteMetadata.title}</header>
+      <header
+        style={{
+          fontSize: "3rem",
+          color: "gray",
+          fontWeight: "bold",
+          textAlign: "center",
+        }}
+      >
+        {data.site.siteMetadata.title}
+      </header>
 
       <nav>
-        <ul className={navLinks}>
+        <ul className={navLinks} style={{ justifyContent: "space-around" }}>
           <li className={navLinkItem}>
             <Link className={navLinkText} to="/">
               Home
@@ -51,7 +60,7 @@ function Layout({ pageTitle, children }) {
         {children}
       </main>
 
-      <div>CopyRight All Rights</div>
+      <div style={{ textAlign: "center" }}>CopyRight All Rights</div>
     </div>
   );
 }
