@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import {
   container,
@@ -20,7 +20,10 @@ function Layout({ pageTitle, children }) {
     }
   `);
   return (
-    <div className={container} style={{ border: "2px solid gray" }}>
+    <div
+      className={container}
+      style={{ border: "2px solid gray", padding: "5px" }}
+    >
       <title>
         {pageTitle} | {data.site.siteMetadata.title}
       </title>
@@ -52,6 +55,11 @@ function Layout({ pageTitle, children }) {
           <li className={navLinkItem}>
             <Link className={navLinkText} to="/blog/">
               blog
+            </Link>
+          </li>
+          <li className={navLinkItem}>
+            <Link className={navLinkText} to="/tags">
+              tags
             </Link>
           </li>
         </ul>
