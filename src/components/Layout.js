@@ -7,7 +7,6 @@ import {
   navLinkItem,
   navLinkText,
 } from "./layout.module.css";
-import reactDom from "react-dom";
 
 function Layout({ pageTitle, children }) {
   const data = useStaticQuery(graphql`

@@ -6,7 +6,7 @@ import { MDXProvider } from "@mdx-js/react";
 import CodeBlock from "../../components/CodeBlock";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import kebabCase from "lodash.kebabcase";
+
 const components = {
   //코드 스타일링
   code: CodeBlock,

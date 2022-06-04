@@ -1,11 +1,12 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../../components/Layout";
+
 const TagList = ({ data }) => {
   const tags = data.allMdx.distinct;
   return (
     <Layout pageTitle="About Tags">
-      <div>{tags.join(", ")}</div>
+    <ui style={{}}> {tags.map(tag => (<li key={tag}><Link to={`/tags/${tag}`}>{tag}</Link></li>))}</ui>
     </Layout>
   );
 };
