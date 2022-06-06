@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 
 const titleArr = ({data}) =>{
   return(
-  <Layout pageTitle={"HTML"}>
+  <Layout pageTitle={"NODEJS"}>
   {data.allMdx.nodes.map((node)=>(
     <article key={node.id}>
       <h2>
@@ -20,7 +20,7 @@ const titleArr = ({data}) =>{
 export const query=
 graphql`
 {
-  allMdx(filter: {frontmatter: {tags: {eq: "HTML"}}}) {
+  allMdx(filter: {frontmatter: {tags: {eq: "NODEJS"}}}) {
     nodes {
       frontmatter {
         title
